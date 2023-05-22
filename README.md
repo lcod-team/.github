@@ -3,7 +3,7 @@
 
 ```mermaid
 ---
-Low Code Object Descriptor
+title: Low Code Object Descriptor
 ---
 flowchart LR
     A(lcod) -->|created\nby| B(An online\nlowcode\neditor)
