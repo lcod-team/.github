@@ -1,3 +1,5 @@
+<img alt="lcod animated" title="low code object descriptor" src="https://github.com/lcod-team/lcod-assets/raw/main/logo/lcod_color_border_anim.svg" style="height:200px"/>
+
 # LCOD Ecosystem Overview
 
 This document provides an overview of the **LCOD** (Low‑Code On Demand) ecosystem.  It is intended as a human‑readable and machine‑parsable specification for designing, implementing, and composing low‑code components and applications.  The goal of LCOD is to enable developers and AI assistants to build full‑stack applications by assembling reusable blocks rather than writing bespoke code, while still allowing native code generation and compilation when needed.
@@ -20,30 +22,30 @@ LCOD is designed like an onion, with a minimal core and optional layers built on
 
 ```mermaid
 flowchart TD
-    subgraph N0[Kernel (minimal core)]
+    subgraph "Kernel (minimal core)"
         K0[Resolve & Validate]
         K1[Execute blocks]
     end
-    subgraph N1[SDKs / Substrate]
-        S0[Axis primitives (axioms)]
+    subgraph "SDKs / Substrate"
+        S0[Axis primitives 'axioms']
         S1[Native wrappers]
     end
-    subgraph N2[Composition & Tooling]
+    subgraph "Composition & Tooling"
         C0[TOML/JSON loader]
         C1[Compose operator]
         C2[Test runner & mocks]
     end
-    subgraph N3[Adapters]
+    subgraph "Adapters"
         A0[HTTP/JSON‑RPC API]
         A1[MCP tools & bridges]
         A2[CLI & Shell]
     end
-    subgraph N4[Hosts]
+    subgraph "Hosts"
         H0[Embedded library]
         H1[Sidecar service]
         H2[Standalone server]
     end
-    subgraph N5[Tools & IDE]
+    subgraph "Tools & IDE"
         T0[Registry & Resolver]
         T1[RAG Catalogue]
         T2[Web IDE]
@@ -68,7 +70,7 @@ flowchart TD
     T0 --> T1
     T1 --> T2
     T2 --> T3
-````
+```
 
 **N0 (Kernel)** — provides only the ability to resolve a block by its ID, validate inputs/outputs against JSON Schemas, and execute it by delegating to either primitive `axiom` functions, `native` implementations, or composite flows defined via the compose operator.  It defines the `Func` and `Registry` interfaces and is free of any I/O or networking concerns.
 
