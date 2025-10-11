@@ -2,35 +2,35 @@
 
 # Build With LCOD
 
-**LCOD (Low‑Code On Demand)** est une plateforme "compose‑first" : on assemble des applications à partir de blocs réutilisables plutôt que d'écrire du code glue. Chaque composant embarque schémas, docs et tests ; un noyau minimal les exécute sur plusieurs runtimes ; une registry Git et un resolver assurent la traçabilité et la reproductibilité.
+**LCOD (Low‑Code On Demand)** is a compose-first platform: applications are assembled from reusable components instead of glue code. Every block ships with schemas, docs, and tests; a lightweight kernel runs those blocks across runtimes; a Git-native registry and resolver keep delivery reproducible.
 
-## Piliers
+## Pillars
 
-- **Spécification d'abord** – `lcod-spec` définit `lcp.toml`, le DSL `compose`, les fixtures et les helpers communs.
-- **Kernels portables** – `lcod-kernel-js` (Node) et `lcod-kernel-rs` (Rust) partagent la même sémantique d’exécution.
-- **Distribution Git-native** – `lcod-registry` publie manifests + catalogue (`packages.jsonl`, `registry.json`) pour résoudre, vérifier et mettre en cache les blocs.
-- **Tooling composable** – `lcod-resolver` exprime le pipeline de résolution en LCOD ; les scripts CI/CLI réutilisent les mêmes composants.
-- **Assistance design-time** – IDE + RAG (en cours) pour aider humains et agents à chercher, assembler et valider les flows avant déploiement.
+- **Specification first** – `lcod-spec` defines `lcp.toml`, the `compose` DSL, shared fixtures, and helper components.
+- **Portable kernels** – `lcod-kernel-js` (Node) and `lcod-kernel-rs` (Rust) share identical execution semantics.
+- **Git-native distribution** – `lcod-registry` publishes manifests and the generated catalogue (`packages.jsonl`, `registry.json`) so clients can resolve, verify, and cache components.
+- **Composable tooling** – `lcod-resolver` expresses the resolution pipeline in LCOD; CI/CLI scripts reuse the same helpers.
+- **Design-time assistance** – the upcoming IDE + RAG stack helps humans (and agents) search, assemble, and validate flows before shipping.
 
-## Carte de l’écosystème
+## Ecosystem Map
 
 ```mermaid
 flowchart LR
     subgraph Authoring
-        spec[lcod-spec\nSpec + fixtures]
-        registry[lcod-registry\npackages.jsonl + manifests]
+        spec["lcod-spec<br/>Spec + fixtures"]
+        registry["lcod-registry<br/>Catalogue + manifests"]
     end
     subgraph Distribution
-        resolver[lcod-resolver\nCLI + API]
-        catalogue[packages.jsonl]
+        resolver["lcod-resolver<br/>CLI + API"]
+        catalogue["packages.jsonl"]
     end
     subgraph Runtimes
-        kernelJS[lcod-kernel-js\nNode runtime]
-        kernelRS[lcod-kernel-rs\nRust runtime]
+        kernelJS["lcod-kernel-js<br/>Node runtime"]
+        kernelRS["lcod-kernel-rs<br/>Rust runtime"]
     end
     subgraph Experiences
-        demos[lcod-app-demo / backend]
-        ide[(lcod-ide — WIP)]
+        demos["lcod-app-demo / backend"]
+        ide["lcod-ide (WIP)"]
     end
     spec --> registry
     spec --> resolver
@@ -43,23 +43,23 @@ flowchart LR
     ide --> spec
 ```
 
-## Repos clefs
+## Key Repositories
 
-| Repository | Rôle | Statut |
+| Repository | Role | Status |
 | --- | --- | --- |
-| [`lcod-spec`](https://github.com/lcod-team/lcod-spec) | Spécification, schémas, helpers, fixtures | Actif (roadmap M5 registry) |
-| [`lcod-registry`](https://github.com/lcod-team/lcod-registry) | Registry Git (catalogue + automation) | Bootstrap terminé |
-| [`lcod-kernel-js`](https://github.com/lcod-team/lcod-kernel-js) | Runtime Node/TypeScript | Parité spec + registry helpers |
-| [`lcod-kernel-rs`](https://github.com/lcod-team/lcod-kernel-rs) | Runtime Rust | Parité spec + registry helpers |
-| [`lcod-resolver`](https://github.com/lcod-team/lcod-resolver) | CLI resolver compose-first | Refacto en cours |
-| [`lcod-app-demo`](https://github.com/lcod-team/lcod-app-demo) | Démos et apps de référence | WIP |
-| [`lcod-assets`](https://github.com/lcod-team/lcod-assets) | Logos & visuels | Stable |
+| [`lcod-spec`](https://github.com/lcod-team/lcod-spec) | Specification, schemas, helpers, fixtures | Active (registry roadmap in progress) |
+| [`lcod-registry`](https://github.com/lcod-team/lcod-registry) | Git registry (catalog + automation) | Bootstrap complete |
+| [`lcod-kernel-js`](https://github.com/lcod-team/lcod-kernel-js) | Node/TypeScript runtime & SDK | Spec parity + registry helpers wired |
+| [`lcod-kernel-rs`](https://github.com/lcod-team/lcod-kernel-rs) | Rust runtime & SDK | Spec parity + registry helpers wired |
+| [`lcod-resolver`](https://github.com/lcod-team/lcod-resolver) | Compose-first resolver CLI | Refactor ongoing |
+| [`lcod-app-demo`](https://github.com/lcod-team/lcod-app-demo) | Reference applications & samples | WIP |
+| [`lcod-assets`](https://github.com/lcod-team/lcod-assets) | Logos & shared visuals | Stable |
 
-## Prochaines étapes
+## What’s Next
 
-- Durcir la registry : validation de hash/signature, miroir GitHub Pages, artefacts `.lcpkg`.
-- Enrichir le catalogue de helpers (core, adapters) et publier la matrice de compatibilité.
-- Proposer une preview de l’IDE LCOD (RAG + édition compose en live).
-- Étendre la pipeline assemble → ship → build sur plusieurs langages.
+- Harden the registry: hash/signature validation, GitHub Pages mirror, `.lcpkg` artefacts.
+- Enrich the helper catalogue (core contracts, adapters) and publish compatibility matrices.
+- Ship the LCOD IDE preview (RAG integration + live compose editing).
+- Expand the assemble → ship → build pipeline across languages.
 
-👉 Suivez les roadmaps de chaque repo pour les milestones détaillés ou passez sur les Issues/Discussions pour contribuer.
+👉 Follow each repo’s roadmap for milestones, or jump into Issues/Discussions to help shape the next components.
