@@ -45,15 +45,15 @@ flowchart LR
 
 ## Key Repositories
 
-| Repository | Role | Status |
-| --- | --- | --- |
-| [`lcod-spec`](https://github.com/lcod-team/lcod-spec) | Specification, schemas, helpers, fixtures | Active (registry roadmap in progress) |
-| [`lcod-registry`](https://github.com/lcod-team/lcod-registry) | Git registry (catalog + automation) | Bootstrap complete |
-| [`lcod-kernel-js`](https://github.com/lcod-team/lcod-kernel-js) | Node/TypeScript runtime & SDK | Spec parity + registry helpers wired |
-| [`lcod-kernel-rs`](https://github.com/lcod-team/lcod-kernel-rs) | Rust runtime & SDK | Spec parity + registry helpers wired |
-| [`lcod-resolver`](https://github.com/lcod-team/lcod-resolver) | Compose-first resolver CLI | Refactor ongoing |
-| [`lcod-app-demo`](https://github.com/lcod-team/lcod-app-demo) | Reference applications & samples | WIP |
-| [`lcod-assets`](https://github.com/lcod-team/lcod-assets) | Logos & shared visuals | Stable |
+| Repository | Role | Status | CI |
+| --- | --- | --- | --- |
+| [`lcod-spec`](https://github.com/lcod-team/lcod-spec) | Specification, schemas, helpers, fixtures | Active (registry roadmap in progress) | [![Validate](https://github.com/lcod-team/lcod-spec/actions/workflows/validate.yml/badge.svg)](https://github.com/lcod-team/lcod-spec/actions/workflows/validate.yml) |
+| [`lcod-registry`](https://github.com/lcod-team/lcod-registry) | Git registry (catalog + automation) | Bootstrap complete | — |
+| [`lcod-kernel-js`](https://github.com/lcod-team/lcod-kernel-js) | Node/TypeScript runtime & SDK | Spec parity + registry helpers wired | [![Node Tests](https://github.com/lcod-team/lcod-kernel-js/actions/workflows/test.yml/badge.svg)](https://github.com/lcod-team/lcod-kernel-js/actions/workflows/test.yml) |
+| [`lcod-kernel-rs`](https://github.com/lcod-team/lcod-kernel-rs) | Rust runtime & SDK | Spec parity + registry helpers wired | [![Rust Tests](https://github.com/lcod-team/lcod-kernel-rs/actions/workflows/test.yml/badge.svg)](https://github.com/lcod-team/lcod-kernel-rs/actions/workflows/test.yml) |
+| [`lcod-resolver`](https://github.com/lcod-team/lcod-resolver) | Compose-first resolver CLI | Refactor ongoing | [![resolver-sources](https://github.com/lcod-team/lcod-resolver/actions/workflows/resolver-sources.yml/badge.svg)](https://github.com/lcod-team/lcod-resolver/actions/workflows/resolver-sources.yml) |
+| [`lcod-app-demo`](https://github.com/lcod-team/lcod-app-demo) | Reference applications & samples | WIP | — |
+| [`lcod-assets`](https://github.com/lcod-team/lcod-assets) | Logos & shared visuals | Stable | — |
 
 ## What’s Next
 
