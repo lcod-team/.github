@@ -52,6 +52,7 @@ flowchart LR
 | [`lcod-kernel-js`](https://github.com/lcod-team/lcod-kernel-js) | Node/TypeScript runtime & SDK | Spec parity + registry helpers wired | [![Node Tests](https://github.com/lcod-team/lcod-kernel-js/actions/workflows/test.yml/badge.svg)](https://github.com/lcod-team/lcod-kernel-js/actions/workflows/test.yml) |
 | [`lcod-kernel-rs`](https://github.com/lcod-team/lcod-kernel-rs) | Rust runtime & SDK | Spec parity + registry helpers wired | [![Rust Tests](https://github.com/lcod-team/lcod-kernel-rs/actions/workflows/test.yml/badge.svg)](https://github.com/lcod-team/lcod-kernel-rs/actions/workflows/test.yml) |
 | [`lcod-resolver`](https://github.com/lcod-team/lcod-resolver) | Compose-first resolver CLI | Refactor ongoing | [![resolver-sources](https://github.com/lcod-team/lcod-resolver/actions/workflows/resolver-sources.yml/badge.svg)](https://github.com/lcod-team/lcod-resolver/actions/workflows/resolver-sources.yml) |
+| [`lcod-components`](https://github.com/lcod-team/lcod-components) | Shared LCOD components & helpers | Standard library rollout | [![Verify Components](https://github.com/lcod-team/lcod-components/actions/workflows/verify-components.yml/badge.svg)](https://github.com/lcod-team/lcod-components/actions/workflows/verify-components.yml) |
 | [`lcod-app-demo`](https://github.com/lcod-team/lcod-app-demo) | Reference applications & samples | WIP | — |
 | [`lcod-assets`](https://github.com/lcod-team/lcod-assets) | Logos & shared visuals | Stable | — |
 
