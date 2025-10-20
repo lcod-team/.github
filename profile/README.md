@@ -10,7 +10,7 @@
 - **Portable kernels** – `lcod-kernel-js` (Node) and `lcod-kernel-rs` (Rust) share identical execution semantics.
 - **Git-native distribution** – `lcod-registry` publishes manifests and the generated catalogue (`packages.jsonl`, `registry.json`) so clients can resolve, verify, and cache components.
 - **Composable tooling** – `lcod-resolver` expresses the resolution pipeline in LCOD; CI/CLI scripts reuse the same helpers.
-- **Design-time assistance** – the upcoming IDE + RAG stack helps humans (and agents) search, assemble, and validate flows before shipping.
+- **Design-time assistance** – the IDE and the [`lcod-rag`](https://github.com/lcod-team/lcod-rag) stack help humans (and agents) search, assemble, and validate flows before shipping.
 
 ## Ecosystem Map
 
@@ -28,6 +28,9 @@ flowchart LR
         kernelJS["lcod-kernel-js<br/>Node runtime"]
         kernelRS["lcod-kernel-rs<br/>Rust runtime"]
     end
+    subgraph Knowledge
+        rag["lcod-rag<br/>RAG ingestion/API"]
+    end
     subgraph Experiences
         demos["lcod-app-demo / backend"]
         ide["lcod-ide (WIP)"]
@@ -37,8 +40,11 @@ flowchart LR
     registry --> resolver
     resolver --> kernelJS
     resolver --> kernelRS
+    resolver --> rag
+    registry --> rag
     kernelJS --> demos
     kernelRS --> demos
+    rag --> ide
     demos --> ide
     ide --> spec
 ```
@@ -53,6 +59,7 @@ flowchart LR
 | [`lcod-kernel-rs`](https://github.com/lcod-team/lcod-kernel-rs) | Rust runtime & SDK | Spec parity + registry helpers wired | [![Rust Tests](https://github.com/lcod-team/lcod-kernel-rs/actions/workflows/test.yml/badge.svg)](https://github.com/lcod-team/lcod-kernel-rs/actions/workflows/test.yml) |
 | [`lcod-resolver`](https://github.com/lcod-team/lcod-resolver) | Compose-first resolver CLI | Refactor ongoing | [![resolver-sources](https://github.com/lcod-team/lcod-resolver/actions/workflows/resolver-sources.yml/badge.svg)](https://github.com/lcod-team/lcod-resolver/actions/workflows/resolver-sources.yml) |
 | [`lcod-components`](https://github.com/lcod-team/lcod-components) | Shared LCOD components & helpers | Standard library rollout | [![Verify Components](https://github.com/lcod-team/lcod-components/actions/workflows/verify-components.yml/badge.svg)](https://github.com/lcod-team/lcod-components/actions/workflows/verify-components.yml) |
+| [`lcod-rag`](https://github.com/lcod-team/lcod-rag) | RAG ingestion & query service (FastAPI, Qdrant, Ollama) | Bootstrap stack live on `nucone.local` | [![CI](https://github.com/lcod-team/lcod-rag/actions/workflows/ci.yml/badge.svg)](https://github.com/lcod-team/lcod-rag/actions/workflows/ci.yml) |
 | [`lcod-app-demo`](https://github.com/lcod-team/lcod-app-demo) | Reference applications & samples | WIP | — |
 | [`lcod-assets`](https://github.com/lcod-team/lcod-assets) | Logos & shared visuals | Stable | — |
 
